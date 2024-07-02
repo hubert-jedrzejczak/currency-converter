@@ -1,6 +1,13 @@
 # CurrencyConverter
 
+<img src="https://onedrive.live.com/embed?resid=F2741C0750B27962%2149557&authkey=%21AEHsa3eAE9LKtgw&width=1024" width="1024" height="auto" />
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+
+Uses:
+[NBP Web API](https://api.nbp.pl/)
+[flagsapi](https://flagsapi.com/)
+[currency-flags](https://currency-flags.as93.net/)
 
 ## Development server
 
