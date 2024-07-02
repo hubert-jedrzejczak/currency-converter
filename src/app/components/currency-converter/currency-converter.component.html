@@ -1,0 +1,70 @@
+<section class="currency-converter">
+  <form
+    [formGroup]="exchangeForm"
+    (ngSubmit)="convertCurrency()"
+    class="form-wrapper"
+  >
+    <h2 class="header">Wybierz waluty i sprawdź kurs</h2>
+    <div class="from-currency flex-row border box-heihgt">
+      <label for="fromCurrency"
+        ><app-currency-flag
+          [currencyCode]="this.exchangeForm.get('fromCurrency')?.value"
+        ></app-currency-flag
+      ></label>
+      <select
+        aria-label="etykieta dla waluty źródłowej"
+        id="fromCurrency"
+        name="fromCurrency"
+        formControlName="fromCurrency"
+        (change)="checkCurrencies()"
+      >
+        <option *ngFor="let currency of currencies" [value]="currency">
+          {{ currency }}
+        </option>
+      </select>
+    </div>
+    <div class="amount flex-column border">
+      <label class="amount-label" for="amount">Mam</label>
+      <input
+        type="number"
+        id="amount"
+        name="amount"
+        min="0"
+        step="0.01"
+        formControlName="amount"
+      />
+    </div>
+    <button
+      type="button"
+      (click)="changeCurrencies()"
+      class="switch-currency-btn flex-row"
+    >
+      <img src="/assets/svg/change-money.svg" alt="przycisk przełączania waluty" />
+    </button>
+    <div class="to-currency flex-row border box-heihgt">
+      <label for="toCurrency"
+        ><app-currency-flag
+          [currencyCode]="this.exchangeForm.get('toCurrency')?.value"
+        ></app-currency-flag
+      ></label>
+      <select
+        aria-label="etykieta dla waluty docelowej"
+        id="toCurrency"
+        name="toCurrency"
+        formControlName="toCurrency"
+        (change)="checkCurrencies()"
+      >
+        <option *ngFor="let currency of currencies" [value]="currency">
+          {{ currency }}
+        </option>
+      </select>
+    </div>
+    <div class="exchange flex-column border">
+      <label class="exchange-label" for="exchange">Otrzymam</label>
+      <output *ngIf="convertedAmount !== undefined">
+        {{ convertedAmount.toFixed(2).replace('.', ',') }}
+      </output>
+    </div>
+    <button class="exchange-btn" type="submit">Sprawdź kurs</button>
+  </form>
+</section>

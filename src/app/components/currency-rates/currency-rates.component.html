@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <datepicker></datepicker>
+  <div *ngIf="exchangeRates.length" >
+    <h3>Kursy wymiany na dzień {{ selectedDate }}</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let header of tableHeaders">{{ header | titlecase }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rate of exchangeRates">
+          <td class="currency-code">
+            <app-currency-flag [currencyCode]="rate.code"></app-currency-flag>
+            {{ rate.code }}
+          </td>
+          <td>{{ rate.currency | titlecase }}</td>
+          <td>{{ rate.bid }}</td>
+          <td>{{ rate.ask }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

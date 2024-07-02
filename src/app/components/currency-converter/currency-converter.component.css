@@ -1,0 +1,143 @@
+.currency-converter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.form-wrapper{
+  display: grid;
+  grid-template-rows: repeat(4, 85px) 100px;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-areas:
+  "header header"
+  "from-currency amount"
+  "switch-currency ."
+  "to-currency exchange"
+  "exchange-btn exchange-btn";
+  font-size: 1.5rem;
+  border: solid 1px lightgrey;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.border {
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items:center;
+  column-gap: 20px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items:start;
+  width: 70%;
+}
+
+.box-heihgt {
+ height: 2.4rem;
+}
+
+.header{
+  grid-area: header;
+  place-self: center;
+}
+
+.from-currency{
+  grid-area: from-currency;
+  place-self: center;
+  padding: 1rem;
+}
+
+.amount {
+  grid-area: amount;
+  justify-self: stretch;
+  align-self: center;
+  padding: 0.5rem 1rem;
+}
+
+.amount-label {
+  font-size: 0.8rem;
+}
+
+.switch-currency-btn {
+  grid-area: switch-currency;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  place-self: center;
+  transition: background-color 0.3s ease;
+}
+
+.switch-currency-btn:hover {
+  background-color: #b2b2b2;
+}
+
+.to-currency{
+  grid-area: to-currency;
+  place-self: center;
+  padding: 1rem;
+}
+
+.exchange {
+  grid-area: exchange;
+  justify-self: stretch;
+  align-self: center;
+  padding: 0.5rem 1rem;
+}
+
+.exchange-label {
+  font-size: 0.8rem;
+}
+
+.exchange-btn{
+  grid-area: exchange-btn;
+  justify-self: center;
+  align-self: center;
+  height: max-content;
+  width: max-content;
+  padding: 1rem 1.5rem;
+  margin: 40px 0;
+  background-color: #262626;
+  font-family: poppins;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.exchange-btn:hover {
+  background-color: #727272;
+}
+
+select {
+  border: none;
+  font-size: 1.5rem;
+}
+
+select:focus {
+  border-color: #000;
+}
+
+input {
+  width: 100%;
+  border: none;
+  font-family: poppins;
+  font-size: 1.5rem;
+}
+
+input:focus {
+  border-color: #000;
+}

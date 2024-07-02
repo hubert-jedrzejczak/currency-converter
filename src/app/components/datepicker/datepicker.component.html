@@ -1,0 +1,6 @@
+<form [formGroup]="dateForm">
+  <div class="wrapper">
+    <label for="date">Wybierz datę kursów w tabeli</label>
+    <input type="date" id="date" formControlName="date" min="2002-01-02" [max]="maxDate" (change)="onSubmit()">
+  </div>
+</form>

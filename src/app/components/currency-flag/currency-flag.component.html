@@ -1,0 +1,18 @@
+<div class="image-container">
+  <img
+    *ngIf="!imageErrors[currencyCode]"
+    [src]="
+      'https://raw.githubusercontent.com/Lissy93/currency-flags/master/assets/flags_png_rectangle/' +
+      currencyCode.toLowerCase() +
+      '.png'
+    "
+    (error)="handleImageError(currencyCode)"
+    alt="flaga {{ currencyCode }}"
+  />
+  <img
+    *ngIf="imageErrors[currencyCode]"
+    [src]="'https://flagsapi.com/' + getCountryCode(currencyCode) + '/flat/64.png'"
+    (error)="handleImageError(currencyCode)"
+    alt="flaga {{ currencyCode }}"
+  />
+</div>
